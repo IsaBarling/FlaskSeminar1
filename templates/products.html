@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <ul class="nav nav-tabs mt-4">
+        <li class="nav-item">
+            <a class="nav-link active" href="#clothing" data-toggle="tab">Одежда</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#jackets" data-toggle="tab">Куртки</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#shoes" data-toggle="tab">Обувь</a>
+        </li>
+    </ul>
+
+    <div class="tab-content mt-4">
+        <div class="tab-pane fade show active" id="clothing">
+            <h1>Одежда</h1>
+            <ul>
+                {% for item in items_clothing %}
+                    <li>{{ item.name }} - Цвет: {{ item.color }}, Цена: {{ item.price }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="tab-pane fade" id="jackets">
+            <h1>Куртки</h1>
+            <ul>
+                {% for item in items_jackets %}
+                    <li>{{ item.name }} - Цвет: {{ item.color }}, Цена: {{ item.price }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="tab-pane fade" id="shoes">
+            <h1>Обувь</h1>
+            <ul>
+                {% for item in items_shoes %}
+                    <li>{{ item.name }} - Цвет: {{ item.color }}, Цена: {{ item.price }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
